@@ -1,0 +1,30 @@
+---
+title: "PRACTICE RMD FILE"
+author: "Jess Remington"
+date: "2/5/2020"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r load-packages, include=FALSE}
+library(tidyverse)
+```
+
+```{r make-plot, echo=FALSE}
+storms %>%
+  group_by(year) %>%
+  summarize(wind = mean(wind)) %>%
+  ggplot(mapping = aes(x = year, y = wind)) +
+  geom_line() + 
+  geom_point()
+  
+```
+
+```{r, eval = FALSE, include = FALSE}
+Ignore this text 
+```
